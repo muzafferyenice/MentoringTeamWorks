@@ -1,4 +1,4 @@
-package myProjects;
+package myAdvancedProjects;
 
 public class NestedTernary {
     public static void main(String[] args) {

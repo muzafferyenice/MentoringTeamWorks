@@ -1,6 +1,5 @@
-package myProjects;
+package myAdvancedProjects;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class StringManipulation2 {

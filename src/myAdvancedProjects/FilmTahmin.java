@@ -1,4 +1,4 @@
-package myProjects;
+package myAdvancedProjects;
 
 import java.util.*;
 

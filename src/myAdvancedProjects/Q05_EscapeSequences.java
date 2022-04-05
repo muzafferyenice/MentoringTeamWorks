@@ -1,4 +1,4 @@
-package myProjects;
+package myAdvancedProjects;
 
 public class Q05_EscapeSequences {
     /*
