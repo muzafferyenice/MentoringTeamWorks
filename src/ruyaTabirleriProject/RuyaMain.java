@@ -7,6 +7,7 @@ public class RuyaMain {
         RuyaGunduz ruyaTabirleriGunduz = new RuyaGunduz("gunduz");
         RuyaGece ruyaTabirlerisonlandir = new RuyaGece();
 
-    }
 
+
+    }
 }

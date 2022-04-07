@@ -8,7 +8,8 @@ import java.util.*;
 public class MethodTahmin {
 
 
-    static List<String> methodlar = new ArrayList<>(Arrays.asList("Add", "addAll(Collection C)", "get()", "remove()", "sort()", "set()", "subList()", "isEmpty()"));
+    static List<String> methodlar = new ArrayList<>(Arrays.asList("Add", "addAll(Collection C)", "get()", "remove()",
+            "sort()", "set()", "subList()", "isEmpty()"));
     /*
  TASK :
   yukarıdaki film listinde bulunan filmlerden herhangi birisini kullanıcının film ismini  görmeden
@@ -33,9 +34,9 @@ public class MethodTahmin {
     }
     private static void methodGetir(List<String> methodlar, int index) {
 
-        StringBuilder tahminEdilecekMethod = new StringBuilder(MethodTahmin.methodlar.get(index).replaceAll("\\w", "-"));//tum harf karakterleri - ile değiştir
+        StringBuilder tahminEdilecekMethod = new StringBuilder(MethodTahmin.methodlar.get(index).replaceAll("\\w", "*"));//tum harf karakterleri - ile değiştir
         System.out.println(tahminEdilecekMethod);
-        System.out.println(methodlar.get(index).length() + " harfli yabanci film seçtiniz. Filmi tahmin etmek için " + 2 * methodlar.get(index).length() + " hakkınız var .");
+        System.out.println(methodlar.get(index).length() + " harfli method seçtiniz. Methodu tahmin etmek için " + 2 * methodlar.get(index).length() + " hakkınız var .");
 
         char harf = ' ';
         int tahminSayısı = 0;

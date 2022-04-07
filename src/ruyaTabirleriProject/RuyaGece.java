@@ -38,6 +38,7 @@ public class RuyaGece {//gordugun ruyayi gir java yorumlasin
             System.out.println("yanlis tusa bastiniz bastan deneyin");
             RuyaGece ruyaTabirleriGece = new RuyaGece("gece");
 
+
         }
 
     }

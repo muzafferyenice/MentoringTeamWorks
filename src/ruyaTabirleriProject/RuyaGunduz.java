@@ -28,6 +28,7 @@ public class RuyaGunduz {
                 System.out.println("lutfen yatarken uzerinizin ve pencerenin kapali oldugundan emin olun ");
             } else {
                 System.out.println("hatali sayi girdiniz tekrar deneyin");
+
             }
 
         } else {
