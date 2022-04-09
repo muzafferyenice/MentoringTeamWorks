@@ -13,14 +13,17 @@ public class OrhanClass {
         fiyatlar[3] = "Soğan   Kilo   ; 12.30 Kr ";
         fiyatlar[4] = "Havuç Kilo ; 23.10 Kr ";
         fiyatlar[5] = "Elma  Kilo ; 9.2 Kr ";
-        fiyatlar[6] = "Muz   Kilo ; 8.90 Kr ";
+        fiyatlar[6] = "Muz   Kilo3 ; 8.90 Kr ";
         fiyatlar[7] = "Çilek   Kilo ; 55.10 Kr ";
         fiyatlar[8] = "Kavun   Kilo ; 90.30 Kr ";
         fiyatlar[9] = "Üzüm   Kilo ; 90.70 Kr ";
         fiyatlar[10] = "Limon  Adet ; 0.50 Kr ";
 
-
-        JOptionPane JOptionPane = new JOptionPane();
+        String secenekler[]={"evet","hayir", "kararsiz"};
+        String mesaj="kahve icer misin?";
+        int secim = JOptionPane.showOptionDialog(null,mesaj,"Siparis",JOptionPane.YES_NO_CANCEL_OPTION,3,null,secenekler,null);
+        //JOptionPane.showMessageDialog(null,"emin misin?","islem menusu",3);
+        JOptionPane JOptionPane = new JOptionPane(); //scanner gorevi goruyor
         JOptionPane.showMessageDialog(null, fiyatlar[0] + "\n" + fiyatlar[1] + "\n"
                 + fiyatlar[2] + "\n" + fiyatlar[3] + "\n" + fiyatlar[4] + "\n" + fiyatlar[5]
                 + "\n" + fiyatlar[6] + "\n" + fiyatlar[7] + "\n" + fiyatlar[8] + "\n" + fiyatlar[9] + "\n" + fiyatlar[10]);

@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +29,9 @@ public class Main_MethodsUsing{
 
         String t ="*".repeat(myyyName.length());//strinde tum stringi * yapar
         System.out.println(t);
+
+        String ogrenciler="kurs ogrencileri : " +" Ahmet\n"+"mehmet\n"+"ali\n";
+        JOptionPane.showMessageDialog(null,ogrenciler,"kurs",3);
 
 
 

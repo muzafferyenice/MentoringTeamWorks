@@ -62,7 +62,7 @@ public class MethodTahmin {
                         dogruTahminSayısı++;
                     }
                     tahminEdilecekMethod.setCharAt(i, harf);//dogru tahmin edilen harf tahmineilcekmethod indexe göre atandı
-                }
+                }//str.substring(0,1)+str.substring(1);
             }
             if (tahminEdilecekMethod.toString().equalsIgnoreCase(methodlar.get(index))) {
                 System.out.println(" tebrikler kaazandin ");
