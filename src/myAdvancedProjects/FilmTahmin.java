@@ -35,7 +35,7 @@ public class FilmTahmin {
     }
 
     private static void filmGetir(List<String> film, int index) {
-        //   Scanner scan = new Scanner(System.in);
+        //   Scanner scan = new Scanner(System.in);                                       //"[()]
         StringBuilder tahminEdilecekFilm = new StringBuilder(FilmTahmin.filmler.get(index).replaceAll("\\w", "-"));//tum harf karakterleri - ile değiştir
         System.out.println(tahminEdilecekFilm);
         System.out.println(film.get(index).length() + " harfli yabanci film seçtiniz. Filmi tahmin etmek için " + 2 * film.get(index).length() + " hakkınız var .");
