@@ -4,7 +4,7 @@ import java.util.*;
 
 public class FilmTahmin {
 
-    static List<String> filmler = new ArrayList<>(Arrays.asList("JOKER", "INCEPTION", "PIYANIST", "GREENMILE", "LEON", "GODFATHER", "JURASSICPARK", "TITANIC"));
+    static List<String> filmler = new ArrayList<>(Arrays.asList("ADD()","JOKER", "INCEPTION", "PIYANIST", "GREENMILE", "LEON", "GODFATHER", "JURASSICPARK", "TITANIC"));
     /*
      TASK :
       yukarıdaki film listinde bulunan filmlerden herhangi birisini kullanıcının film ismini  görmeden
@@ -35,8 +35,11 @@ public class FilmTahmin {
     }
 
     private static void filmGetir(List<String> film, int index) {
-        //   Scanner scan = new Scanner(System.in);                                       //"[()]
-        StringBuilder tahminEdilecekFilm = new StringBuilder(FilmTahmin.filmler.get(index).replaceAll("\\w", "-"));//tum harf karakterleri - ile değiştir
+        //   Scanner scan = new Scanner(System.in);
+        StringBuilder tahminEdilecekFilm = new StringBuilder(FilmTahmin.
+                filmler.get(index).
+                replaceAll("\\w", "-"));//tum harf karakterleri - ile
+        // değiştir
         System.out.println(tahminEdilecekFilm);
         System.out.println(film.get(index).length() + " harfli yabanci film seçtiniz. Filmi tahmin etmek için " + 2 * film.get(index).length() + " hakkınız var .");
 
@@ -56,8 +59,10 @@ public class FilmTahmin {
             //     System.out.println(str + " harf zaten acıldı");
             // }
             for (int i = 0; i < tahminEdilecekFilm.length(); i++) {
-                if (film.get(index).charAt(i) == harf) {//tahmin listeki edilen harf filmde varsa
-                    if (!tahminEdilecekFilm.toString().contains(film.get(index).substring(i, i + 1))) {
+                if (film.get(index).charAt(i) == harf) {//tahmin listeki edilen harf
+                    // filmde varsa
+                    if (!tahminEdilecekFilm.toString().contains(film.get(index).
+                            substring(i, i + 1))) {
                         //tahmin edien harf listteki filmde var ama tahminedilecek (---)filmde yoksa doğru tahmin ettin
                         dogruTahminSayısı++;
                     }

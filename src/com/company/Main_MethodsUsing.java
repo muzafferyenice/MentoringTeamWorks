@@ -26,6 +26,7 @@ public class Main_MethodsUsing{
 
         System.out.println(myyName);
         String myyyName = "domanokz";
+        //System.out.println(myyyName.replace(myyyName.length()-1,'x'));
 
         String t ="*".repeat(myyyName.length());//strinde tum stringi * yapar
         System.out.println(t);
