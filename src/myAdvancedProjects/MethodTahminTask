@@ -19,3 +19,15 @@ methogetir methoduu olustur
  bilemezse oyun bitti ve tahmin edilemyen methodu yazdir
 
 
+  Çalişma mantiği ve yapısi while döngüsününkiyle aynidır.
+
+  Tek farklı while döngüsünde döngünün başında belirttiğimiz
+
+  koşul ifadesi do-while döngüsünde sonda yer almaktadir. While
+
+  döngüsünde koşul ifadesinin sağlanmadığı durumda program akişi
+
+  döngüye girmeden devam eder, fakat do-while döngüsünde bu koşul
+
+  ifade sonda yer aldiğindan programimiz en az 1 kere do-while içerisindeki işlemleri uygular.
+
