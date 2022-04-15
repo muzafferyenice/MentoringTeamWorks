@@ -45,8 +45,13 @@ public class MethodTahmin {
             harf = scan.next().charAt(0);//method için tahmin edilen harf alındı
             str += harf;//harf str'ye atandı
             //bu body girilen her yanlis deger icin tahmin sayisini 1 artirir
+
+            //burasi hocam
             if (tahminEdilecekMethod.toString().contains("*")) { //tahminEdilecekMethod'da kullanıcıdan alınan harf yoksa tahmin sayısı artılıdı
                 tahminSayısı++;//Umut beyin bug cozumu:) * girdiginde yanlis tahmin sayisi artacak
+
+
+
                 if (!tahminEdilecekMethod.toString().contains(str)) {//tahmin edilecek (***)method da yoksa yanlis tahmin ettin
                     //tahminSayısı++;//
                 }
