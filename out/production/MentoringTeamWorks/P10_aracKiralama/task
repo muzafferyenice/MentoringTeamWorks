@@ -1,4 +1,31 @@
-yusuf beyle hazirladigimiz task
+
+1- arac kiralama  bilgilerini ins variable olarak olusturur
+2- kullanicidan aracu alacagi gun tarih
+teslim tarih saat al tarihlerde hata varsa tekrar sor alis teslimden sonra olamaz yazdirin
+tekrar isteyin
+3- kullanicidan aldiginiz gun ve ayi  ayri ayri yazdirin
+girdigi ay gun bilgilerini gunleri hesaplayip ekrana yazdirinan
+
+olusturdugunuz filoda bulunan tum araclarin model marka yakit tipi vites ve gunlk ucretleir girin
+ve aractaleplist bos bir list olusturur
+kullaniciya filo listesini konsola int deger atayip yazdirin
+
+kullanicinin secimine gore aracin tum ozelliklerini ve istedigi gun sayisi kullaniicinin odeyecegi toplam bedeli yazdir
+
+7- devam etmek isteyip istemedigini sorun
+islemeDevamDongusu method cre et
+isltemiyorsa islemi tekrar ettiirin arac sectirin
+devam ediyorsa kullanicidan ksilsel bilgilerini yazdirin
+musteri bilgi methjod cre et
+
+
+8- odemebilgileri icin kart no iste method cre et
+kart no 12 den buyuyk olmasin hatali giriste tekrar katt no iste
+
+9- odeme basariyla gerceklesti yazdirin
+
+
+yusuf beyden gelen task
 /*
   1- arac kiralama icin model marka yakit tipi vites ve gunluk ucret olustur  Kullanicidan aracı alacaği gün saat tarih bilgilerini ve
      teslim edeceği gün saat tarih bilgilerini olusturun ve  bu bilgileri farkli class'ta tutun
@@ -34,4 +61,5 @@ yusuf beyle hazirladigimiz task
   8- kart numarasinda hata yoksa "Odemeniz Basari ile Gerceklesmistir. Iyi gunler dileriz..." yazdirin
 
 */
+
 
