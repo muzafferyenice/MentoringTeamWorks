@@ -6,7 +6,7 @@ BİR OKUL YÖNETİM PLATFORMU KODLAYINIZ.
 		Öğretmen: Ad-Soyad,  kimlik No, yaş, bölüm, ve sicil No bilgileri içermelidir.
 		Öğrenci: Ad-Soyad,  kimlik No, yaş, numara, sınıf bilgileri içermelidir.
 
-	2.	Program başladığında Kullanıcıya, Öğretmen ve Öğrenci işlemlerini seçebilmesi için
+	2.	Program başladığında kullanici, Öğretmen ve Öğrenci işlemlerini seçebilmesi için
 		Aşağıdaki gibi bir menü gösterilsin.
 
 	====================================
@@ -19,12 +19,12 @@ BİR OKUL YÖNETİM PLATFORMU KODLAYINIZ.
 	3.	Seçilen Kişi türüne göre aşağıdaki işlemleri gösteren bir alt menü daha gösterilsin.
 
 	============= İŞLEMLER =============
-		 1-EKLEME
-		 2-ARAMA
-		 3-LİSTELEME
-		 4-SİLME
-		 5-ANA MENÜ
-		 Q-ÇIKIŞ
+		 1-EKLEME    ***
+		 2-ARAMA      ***
+		 3-LİSTELEME   ***
+		 4-SİLME        ***
+		 5-ANA MENÜ    ***
+		 Q-ÇIKIŞ     ***
 
 	SEÇİMİNİZ:
 
@@ -32,4 +32,11 @@ BİR OKUL YÖNETİM PLATFORMU KODLAYINIZ.
 	    ekleme, kimlik no ile silme ve arama, var olan tüm kişileri listeleme gibi işlemler yapılabilmelidir.
 		Bunun yanında bir üst menüye dönme veya çıkış işlemleri de yapılabilmelidir.
 
- */
+ */try catch ile isleme devam
+try catch ile
+*ogrenci yas kontrol
+ogretmen brans kontrolu
+kimlik no kontrol
+yapildi
+
+***yogun dummy avina cikildi ***

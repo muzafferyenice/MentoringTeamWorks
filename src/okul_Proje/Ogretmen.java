@@ -7,7 +7,6 @@ public class Ogretmen extends Kisi{
     private String brans;
     private String sicilNo;
     public Ogretmen(){
-
     }
     public Ogretmen(String brans, String sicilNo) {
         this.brans = brans;

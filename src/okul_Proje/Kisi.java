@@ -43,6 +43,6 @@ public class Kisi {
         return "" +
                 "adSoyad='" + adSoyad + '\'' +
                 ", kimlikNo='" + kimlikNo + '\'' +
-                ", yas=" + yas ;
+                ", yas= " + yas ;
     }
 }
