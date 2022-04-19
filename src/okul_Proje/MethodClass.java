@@ -1,9 +1,15 @@
 package okul_Proje;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-import static okul_Proje.Bilgi_Class.*;
-
-public class EklemedirKocakonak extends Bilgi_Class{
-
+public class MethodClass extends Kisi {
+    static Scanner scan = new Scanner(System.in);
+    String branslar[] = {"Kimya", "Fizik", "Biyoloji", "Matematik", "Geometri"};
+    String siniflar[] = {"11A", "11B", "12A", "12B", "10A", "10B", "9A", "9B", "8A", "8B", "7A", "7B", "6A", "5A", "4A", "3A", "2A", "1A"};
+    List<Kisi> ogretmen = new ArrayList<>();
+    List<Kisi> ogrenci = new ArrayList<>();
+    static String kisi;
     public  void ekleme() {//try catch calis{
         System.out.println("****** " + kisi + " ekleme sayfasina hosgelmissen" + "*********");
         scan.nextLine();//dummy
@@ -44,9 +50,12 @@ public class EklemedirKocakonak extends Bilgi_Class{
                     try {//4
                         yas = scan.nextInt();
                         scan.nextLine();//dummy
-                        if (yas < 23 || yas > 65) {//5
-                            throw new ArithmeticException("Bu yaslarda ogretmenlik yapamazsiniz");
-                        } else {//5
+                        if (yas < 23 ) {
+                            throw new ArithmeticException("ne ara universite bitirdin ");
+                        }else if(yas > 65) {
+                            throw new ArithmeticException("sen emekli olmadin mi ");
+                        }
+                        else {//5
                             System.out.println("brans gir");
                             boolean flag = true;
                             String brans = "";
@@ -92,6 +101,85 @@ public class EklemedirKocakonak extends Bilgi_Class{
             System.out.println(e.getMessage());
         }
         altMenu();// bu sapka cikartir
+    }
+    public  void arama() {
+        System.out.println("****** " + kisi + " arama sayfasina hosgelmissen" + "*******");
+        System.out.println("aramak istediginiz " + kisi + " nin kimlik no giriniz");
+        String tc = scan.next();
+        tc = tc.replaceAll(" ", "");
+        if (kisi.equalsIgnoreCase("ogrenci")) {
+            boolean flag = true;//true aldik 91 95 arasi calisir ve flag false olur eger ogrenci yoksa 98 calisir
+            for (Kisi tc1 : ogrenci) {
+                if (tc.equals(tc1.getKimlikNo())) {
+                    System.out.println(tc1.toString());//alinan tc li ogrenciyi geitirir
+                    flag = false;
+                }
+            }
+            if (flag) {//true buddy si
+                System.out.println("aradiginiz " + kisi + " listesinde yoktur");
+            }
+        } else {
+
+            boolean flag = true;//true aldik 91 95 arasi calisir ve flag false olur eger ogrenci yoksa 98 calisir
+            for (Kisi tc1 : ogretmen) {
+                if (tc.equals(tc1.getKimlikNo())) {
+                    System.out.println(tc1.toString());//alinan tc li ogretmeni geitirir
+                    flag = false;
+                }
+            }
+            if (flag) {//true buddy si
+                System.out.println("aradiginiz " + kisi + " listesinde yoktur");
+            }
+        }
+    }
+    public  void silme() {
+        System.out.println("****** " + kisi + " silme  sayfasina hosgelmissen" + "*******");
+        System.out.println("silmek istediginiz " + kisi + " nin kimlik no giriniz");
+        String tc = scan.next();// bosluk durumuna gore try catch e bagla
+        tc = tc.replaceAll(" ", "");
+        boolean flag = true;
+        if (kisi.equalsIgnoreCase("ogrenci")) {
+            for (Kisi sil : ogrenci) {
+                if (sil.getKimlikNo().equalsIgnoreCase(tc)) {
+                    System.out.println("silinen ogrenci " + sil.getAdSoyad());
+                    ogrenci.remove(sil);
+                    System.out.println("silindi niye sildin ki ");
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println("yanlis kimlik no girdiniz");
+            }
+        } else {
+            for (Kisi sil : ogretmen) {
+                if (sil.getKimlikNo().equalsIgnoreCase(tc)) {
+                    System.out.println("silinen ogretmen " + sil.getAdSoyad());
+                    ogretmen.remove(sil);
+                    System.out.println("silindi niye sildin ki ");
+
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println("yanlis kimlik no girdiniz");
+
+            }
+        }
+
+    }
+    public  void listeleme() {
+        if (kisi.equalsIgnoreCase("ogrenci")) {
+            for (Kisi herOgrenci : ogrenci) {
+                System.out.println(herOgrenci);
+            }
+        } else {
+            for (Kisi herOgretmen : ogretmen) {
+                System.out.println(herOgretmen);
+            }
+        }
+
     }
 }
 
