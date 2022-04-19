@@ -1,11 +1,11 @@
 package okul_Proje;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
 
-public class Runner {
+import java.io.IOException;
+
+
+public class Runner extends Listeleme{
 
     public static void main(String[] args) {
         String dosyaYolu = "src/okul_Proje/yeniTask";
@@ -18,7 +18,7 @@ public class Runner {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Bilgi_Class.menu();
+        Bilgi_Class obj =new Bilgi_Class();
 
     }
 }

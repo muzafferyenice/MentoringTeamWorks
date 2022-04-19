@@ -1,6 +1,6 @@
 package okul_Proje;
 
-public class Kisi {
+public class Kisi implements OkulYonetimi{
 
     private  String adSoyad;
     private String kimlikNo;
@@ -44,5 +44,35 @@ public class Kisi {
                 "adSoyad='" + adSoyad + '\'' +
                 ", kimlikNo='" + kimlikNo + '\'' +
                 ", yas= " + yas ;
+    }
+
+    @Override
+    public void ekleme() {
+
+    }
+
+    @Override
+    public void altMenu() {
+
+    }
+
+    @Override
+    public void arama() {
+
+    }
+
+    @Override
+    public void listeleme() {
+
+    }
+
+    @Override
+    public void cikis() {
+
+    }
+
+    @Override
+    public void silme() {
+
     }
 }
