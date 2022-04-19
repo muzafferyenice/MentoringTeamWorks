@@ -1,15 +1,15 @@
     *************** BU BIR OKUL YONETIM PLATFORMUDUR***************
 
-    Bu programda, Ogrenci ve Ogretmen Kayitlari ile ilgili islemler yapilmaktadir
+    Bu programda, Ögrenci ve Ögretmen Kayitlari ile ilgili islemler yapilmaktadir
 
     ************** BU PROGRAMDA SU ISLEMLER YAPILMAKTADIR**********
 
-    ============= ISLEMLER =============
+    ============= İSLEMLER =============
 		 1-EKLEME    ***
 		 2-ARAMA      ***
-		 3-LISTELEME   ***
+		 3-LİSTELEME   ***
 		 4-SILME        ***
-		 5-ANA MENU    ***
+		 5-ANA MENÜ    ***
 		 Q-CIKIS     ***
 
    * olasi hatalar try/catch bloklari ile kontrol edildi
