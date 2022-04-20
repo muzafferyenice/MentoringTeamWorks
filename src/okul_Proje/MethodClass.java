@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MethodClass extends Kisi {
     static Scanner scan = new Scanner(System.in);
     String branslar[] = {"Kimya", "Fizik", "Biyoloji", "Matematik", "Geometri"};
-    String siniflar[] = {"11A", "11B", "12A", "12B", "10A", "10B", "9A", "9B", "8A", "8B", "7A", "7B", "6A", "5A", "4A", "3A", "2A", "1A"};
+    //String siniflar[] = {"11A", "11B", "12A", "12B", "10A", "10B", "9A", "9B", "8A", "8B", "7A", "7B", "6A", "5A", "4A", "3A", "2A", "1A"};
     List<Kisi> ogretmen = new ArrayList<>();
     List<Kisi> ogrenci = new ArrayList<>();
     static String kisi;
@@ -16,18 +16,18 @@ public class MethodClass extends Kisi {
         System.out.println("isim gir");
         String adSoyad = scan.nextLine();
         System.out.println("kimlik no giriniz ");
-        String kimlikNo = "";
+       // String kimlikNo = "";
         try {//1
-            kimlikNo = scan.nextLine();
+            String kimlikNo = scan.nextLine();
             kimlikNo = kimlikNo.replace(" ", "");//bosluklu girerse diye
             if (kimlikNo.length() != 5) {//2
                 throw new StringIndexOutOfBoundsException("Hatali veya eksik tuslama yaptiniz");
             } else {//2
                 if (kisi.equalsIgnoreCase("Ogrenci")) {//3
                     System.out.println("yas gir");
-                    int yas = 0;
+                   // int yas = 0; // 30. satira int tanimladigimizda bu satira gerek kalamdi
                     try {//4
-                        yas = scan.nextInt();
+                        int yas = scan.nextInt();
                         scan.nextLine();//dummy
                         if (yas < 8 || yas > 19) {//5
                             throw new ArithmeticException("Bu yaslarda ogrenci olmaz");
@@ -46,9 +46,9 @@ public class MethodClass extends Kisi {
                     }
                 } else {//3
                     System.out.println("yas giriniz");
-                    int yas = 0;
+                    //int yas = 0;
                     try {//4
-                        yas = scan.nextInt();
+                        int yas = scan.nextInt();
                         scan.nextLine();//dummy
                         if (yas < 23 ) {
                             throw new ArithmeticException("ne ara universite bitirdin ");
@@ -58,26 +58,26 @@ public class MethodClass extends Kisi {
                         else {//5
                             System.out.println("brans gir");
                             boolean flag = true;
-                            String brans = "";
+                           // String brans = "";
                             try {//6
-                                brans = scan.nextLine();
+                                String brans = scan.nextLine();
                                 for (int i = 0; i < branslar.length; i++) {
-                                    if (brans.equalsIgnoreCase(branslar[i])) {//7
-
+                                    if (brans.equalsIgnoreCase(branslar[i])) {//7 calistiginda bayrak iner calisir
+                                                                                // calismazsa bayrak hala havada
                                         flag = false;
                                     }
                                 }
-                                if (flag) {//true olmasi durumu
-                                    throw new ArrayStoreException("Boyle bir brans yoktur");
+                                if (flag) {//true olmasi durumu basvuran ogretmen istenen brans da degilse
+                                    throw new ArrayStoreException("Boyle bir brans a ihtiyacimz yoktur");
                                 }else{
                                     System.out.println("sicil no gir (ornek : \"a12345\"  seklindeolmali ");
-                                    String sicilNo = "";
+                                   // String sicilNo = "";
                                     try {
-                                        sicilNo = scan.nextLine();
+                                       String sicilNo = scan.nextLine();
                                         sicilNo=sicilNo.replace(" ","");//bosluk girme durumu
-                                        String sicilKontrol=sicilNo;
+                                        String sicilKontrol=sicilNo;//
                                         sicilKontrol=sicilKontrol.replaceAll("\\d","");//rakamlar silindi
-                                        if(sicilKontrol.length()==1&&sicilNo.length()==6){// tek harf varsa ve harften sonra 5 rakam varsa
+                                        if(sicilKontrol.length()==1 && sicilNo.length()==6){// tek harf varsa ve harften sonra 5 rakam varsa
                                             Ogretmen obj2 = new Ogretmen(adSoyad, kimlikNo, yas, brans, sicilNo);
                                             ogretmen.add(obj2);
                                             System.out.println("eklenen ogretmen : "+obj2.getAdSoyad());
@@ -100,7 +100,6 @@ public class MethodClass extends Kisi {
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        altMenu();// bu sapka cikartir
     }
     public  void arama() {
         System.out.println("****** " + kisi + " arama sayfasina hosgelmissen" + "*******");
@@ -145,7 +144,7 @@ public class MethodClass extends Kisi {
                     ogrenci.remove(sil);
                     System.out.println("silindi niye sildin ki ");
                     flag = false;
-                    break;
+                    break;// bu break olmazsa .ConcurrentModificationException hatasi veriyuor foreach calismaya  devam ediyr
                 }
             }
             if (flag) {
@@ -164,10 +163,8 @@ public class MethodClass extends Kisi {
             }
             if (flag) {
                 System.out.println("yanlis kimlik no girdiniz");
-
             }
         }
-
     }
     public  void listeleme() {
         if (kisi.equalsIgnoreCase("ogrenci")) {

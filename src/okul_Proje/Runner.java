@@ -60,7 +60,7 @@ public class Runner extends MethodClass{
         switch (secim2) {
             case "1":
                 ekleme();
-                //altMenu();
+                altMenu();
                 break;
             case "2":
                 arama();
