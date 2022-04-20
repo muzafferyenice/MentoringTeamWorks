@@ -15,7 +15,7 @@
    * yas try/catch ile kimlik no ya baglandi yas kontrol icin belli araliklar
    * alindi yani negatif girme durumu kontrol edildi
    * brans try/catch ile yas a baglandi
-   * ekleme methodu ayri class da calistirildi
+   *
    * sicil no harf ve rakamlardan olusmasi gerketigi icin ve        kontrol edildi
    * nested try/catch mantigi ile ekleme methodu calisildi
    * girilen bilgilerin hepsi dogru oldugunda olusturulan listeye eklendi

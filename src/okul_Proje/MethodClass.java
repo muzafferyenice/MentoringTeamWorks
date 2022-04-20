@@ -77,7 +77,7 @@ public class MethodClass extends Kisi {
                                         sicilNo=sicilNo.replace(" ","");//bosluk girme durumu
                                         String sicilKontrol=sicilNo;//
                                         sicilKontrol=sicilKontrol.replaceAll("\\d","");//rakamlar silindi
-                                        if(sicilKontrol.length()==1 && sicilNo.length()==6){// tek harf varsa ve harften sonra 5 rakam varsa
+                                         if(sicilKontrol.length()==1 && sicilNo.length()==6){// tek harf varsa ve harften sonra 5 rakam varsa
                                             Ogretmen obj2 = new Ogretmen(adSoyad, kimlikNo, yas, brans, sicilNo);
                                             ogretmen.add(obj2);
                                             System.out.println("eklenen ogretmen : "+obj2.getAdSoyad());
@@ -107,7 +107,7 @@ public class MethodClass extends Kisi {
         String tc = scan.next();
         tc = tc.replaceAll(" ", "");
         if (kisi.equalsIgnoreCase("ogrenci")) {
-            boolean flag = true;//true aldik 91 95 arasi calisir ve flag false olur eger ogrenci yoksa 98 calisir
+            boolean flag = true;//true aldik 110 115 arasi calisir ve flag false olur eger ogrenci yoksa 117 calisir
             for (Kisi tc1 : ogrenci) {
                 if (tc.equals(tc1.getKimlikNo())) {
                     System.out.println(tc1.toString());//alinan tc li ogrenciyi geitirir
@@ -119,7 +119,7 @@ public class MethodClass extends Kisi {
             }
         } else {
 
-            boolean flag = true;//true aldik 91 95 arasi calisir ve flag false olur eger ogrenci yoksa 98 calisir
+            boolean flag = true;//true aldik arasi calisir ve flag false olur eger ogrenci yoksa  calisir
             for (Kisi tc1 : ogretmen) {
                 if (tc.equals(tc1.getKimlikNo())) {
                     System.out.println(tc1.toString());//alinan tc li ogretmeni geitirir

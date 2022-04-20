@@ -1,4 +1,10 @@
 /*
+
+                herkes kendisi yapmali artofcoding projemizde ki branslarimiza push yapabiliriz
+                gunluk 14 de takip
+                pazar gunu en clean code secilip birlestirelim
+                set methodlari haluk hocanin dersinde vardir
+
 	 * basit bir depo projesi
 	 *
 	 * Calisan bir fabrikada uygulanan bir sistem olan depo uygulamasidir.
