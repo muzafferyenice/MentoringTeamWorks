@@ -1,13 +1,16 @@
-package depo;
+package storage;
 
 import java.util.*;
 
 public class DepoDuzeni extends DepoBilgileri {
     Scanner scan = new Scanner(System.in);
-   // LinkedHashSet<DepoBilgileri> depom = new LinkedHashSet<>();//set uniqe old icin linkedlist kiullanmadik
+
     List<String> raflar = new ArrayList<>(Arrays.asList("raf1", "raf2", "raf3", "raf4"));
 
-    public void urunEkleme() {
+    Map<Integer, String> urunList = Storage.myMap();
+
+
+    public  DepoDuzeni() {
         System.out.println("urun ekleme sayfasina geldiniz");
         System.out.println("eklemek istediginiz urunun id gir");
         String id = scan.next();

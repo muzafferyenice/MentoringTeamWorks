@@ -38,7 +38,7 @@ public class Islemler {
 
     }
 
-    private static void cikis() {
+    public static void cikis() {
         System.out.println("gule gule");
     }
 

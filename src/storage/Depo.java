@@ -1,4 +1,4 @@
-package depo;
+package storage;
 
 public interface Depo {
     void urunEkleme();

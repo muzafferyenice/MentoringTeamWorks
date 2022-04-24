@@ -5,9 +5,9 @@
                 pazar gunu en clean code secilip birlestirelim
                 set methodlari haluk hocanin dersinde vardir
 
-	 * basit bir depo projesi
+	 * basit bir storage projesi
 	 *
-	 * Calisan bir fabrikada uygulanan bir sistem olan depo uygulamasidir.
+	 * Calisan bir fabrikada uygulanan bir sistem olan storage uygulamasidir.
 	 *
 	 * 1-) burada oncelikle urunun tanimlamasi  yapilir. id urunIsmi uretici miktar birim ve raf (6 adet fields mevcut)
 	 *

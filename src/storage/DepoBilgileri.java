@@ -1,4 +1,4 @@
-package depo;
+package storage;
 
 public class DepoBilgileri implements Depo{
 
