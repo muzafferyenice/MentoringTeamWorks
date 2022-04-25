@@ -1,5 +1,7 @@
 package myStorage;
 
+import storage.Storage;
+
 import javax.swing.*;
 import java.util.*;
 
@@ -8,12 +10,12 @@ public class MapificationFights {
     public static void fights() {
 
 
-        Map<Integer, String> storageProducts = Storage.myProducts();
+        Map<Integer, String> storageProducts = Storage.myMap();
         System.out.println(storageProducts);
-        String  secenek[]={"evet", "hayir"};
-        String mesaj="ne yapcan";
+        String secenek[] = {"evet", "hayir"};
+        String mesaj = "ne yapcan";
         JOptionPane.showMessageDialog(null, "burda kod savaslari var");
-        int sec = JOptionPane.showOptionDialog(null,mesaj, "burda kod savaslari var",JOptionPane.YES_NO_CANCEL_OPTION,2,null,secenek,null);
+        int sec = JOptionPane.showOptionDialog(null, mesaj, "burda kod savaslari var", JOptionPane.YES_NO_CANCEL_OPTION, 2, null, secenek, null);
 
         //map i set sonra list yap ki indexleme yapabil
         Set<Integer> storageProductsKeySet = storageProducts.keySet();
@@ -55,6 +57,7 @@ public class MapificationFights {
 
 
         }
-        System.out.printf("%4d %-6s %-9s %-6s %s\n",valueMDArr[0]);
+        System.out.printf("%4d %-6s %-9s %-6s %s\n", valueMDArr[0]);
     }
+
 }

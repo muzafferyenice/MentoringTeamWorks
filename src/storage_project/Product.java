@@ -1,25 +1,12 @@
 package storage_project;
 
-public class Product implements GodFather{
-    private int id;
+public class Product implements GodFather {//pojo class encapsule edildi
+
     private String urunIsmi;
     private String marka;
-    private String birim;// bizde olan
-    private int miktar;// kullanicinin girdigi
+    private int miktar;
+    private String birim;
     private String raf;
-
-
-    public Product(){
-
-    }
-
-    public Product( String urunIsmi, String marka, int miktar,String birim, String raf) {
-        this.urunIsmi=urunIsmi;
-        this.marka=marka;
-        this.birim=birim;
-        this.miktar=miktar;
-        this.raf=raf;
-    }
 
     public String getUrunIsmi() {
         return urunIsmi;
@@ -27,6 +14,14 @@ public class Product implements GodFather{
 
     public void setUrunIsmi(String urunIsmi) {
         this.urunIsmi = urunIsmi;
+    }
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public void setMarka(String marka) {
+        this.marka = marka;
     }
 
     public int getMiktar() {
@@ -37,6 +32,14 @@ public class Product implements GodFather{
         this.miktar = miktar;
     }
 
+    public String getBirim() {
+        return birim;
+    }
+
+    public void setBirim(String birim) {
+        this.birim = birim;
+    }
+
     public String getRaf() {
         return raf;
     }
@@ -45,42 +48,48 @@ public class Product implements GodFather{
         this.raf = raf;
     }
 
+    public Product() {
 
-    public String getMarka() {
-        return marka;
     }
-
-    public void setMarka(String marka) {
+    public Product(String urunIsmi, String marka, int miktar, String birim, String raf) {
+        this.urunIsmi = urunIsmi;
         this.marka = marka;
-    }
-
-    public String getBirim() {
-        return birim;
+        this.miktar = miktar;
+        this.birim = birim;
+        this.raf = raf;
     }
 
     @Override
     public String toString() {
         return "urunIsmi='" + urunIsmi + '\'' +
                 ", marka='" + marka + '\'' +
+                ", miktar='" + miktar + '\'' +
                 ", birim='" + birim + '\'' +
-                ", miktar=" + miktar +
-                ", raf='" + raf + '\''
-                ;
-    }
-
-    public void setBirim(String birim) {
-        this.birim = birim;
+                ", raf='" + raf + '\'';
     }
 
     @Override
-    public void alisFiyat(int a, int b) {
-        System.out.println("eklemek istediginiz urunun toplam fiyatı : "+a*b);
+    public void urunTanimlama() {
+
     }
 
     @Override
-    public void satisFiyat(double x, double y) {
+    public void urunListele() {
 
-        System.out.println("almak istediginiz urunun toplam fiyatı : "+x*y);
+    }
+
+    @Override
+    public void urunGirisi() {
+
+    }
+
+    @Override
+    public void urunuRafaKoy() {
+
+    }
+
+    @Override
+    public void urunCikisi() {
 
     }
 }
