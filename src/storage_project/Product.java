@@ -1,7 +1,8 @@
 package storage_project;
 
+
 public class Product implements GodFather {//pojo class encapsule edildi
-    int cikisMiktar;
+
 
     private String urunIsmi;
     private String marka;
@@ -30,13 +31,13 @@ public class Product implements GodFather {//pojo class encapsule edildi
     }
 
     public void setMiktar(int miktar) {
-        if(miktar>=cikisMiktar){
-        this.miktar = miktar;
-        }else{
+
+        if (miktar >= 0) {
+            this.miktar = miktar;
+        } else {
             System.out.println("eyle bir mal yogtur bize");
         }
     }
-
     public String getBirim() {
         return birim;
     }
@@ -56,6 +57,7 @@ public class Product implements GodFather {//pojo class encapsule edildi
     public Product() {
 
     }
+
     public Product(String urunIsmi, String marka, int miktar, String birim, String raf) {
         this.urunIsmi = urunIsmi;
         this.marka = marka;
