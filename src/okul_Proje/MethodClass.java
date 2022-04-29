@@ -10,6 +10,7 @@ public class MethodClass extends Kisi {
     List<Kisi> ogretmen = new ArrayList<>();
     List<Kisi> ogrenci = new ArrayList<>();
     static String kisi;
+    @Override
     public  void ekleme() {//try catch calis{
         System.out.println("****** " + kisi + " ekleme sayfasina hosgelmissen" + "*********");
         scan.nextLine();//dummy

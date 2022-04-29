@@ -10,7 +10,7 @@ public class Manav {
         System.out.println("urun    miktar    br_fiyat  urun_toplam");
         System.out.println("*********************************");
         for (int i = 0; i <urun.length ; i++) {
-            System.out.printf("%-8s % 5.2fkg   $%5.2f    $%5.2f\n", urun[i], miktar[i], fiyat[i], miktar[i] * fiyat[i]);
+            System.out.printf("%-8S % 5.2fkg   $%5.2f    $%5.2f\n", urun[i], miktar[i], fiyat[i], miktar[i] * fiyat[i]);
         }
             System.out.println("*********************************");
             double topKilo=0;
