@@ -17,7 +17,7 @@ public class HotelRoomsObjectClass extends HotelRooms {
 
     static List<HotelRooms> odaTalepListesi = new ArrayList<>(Arrays.asList(tekKişilikOda,ciftKişilikOda,dörtKişilikOda,suitOda,aileOdası,kralDairesi));
 
-    static Map<Integer, List<HotelRooms>> musteriOdaBilgisi = new TreeMap<>();//otele giris yapan musteri bilgileri burda topla
+    static Map<Integer, String >musteriOdaBilgisi = new TreeMap<>();//otele giris yapan musteri bilgileri burda topla
     static long girisUcreti;
 
 

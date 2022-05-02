@@ -35,33 +35,29 @@ public class HotelOperations extends HotelServices2 {
             "turGezi icin            11"));
 
     public static void yazdirStr(String a) {//yazdirma action  yapan seed(tohum) create edildi
-        // System.out.print(a + " ");
         System.out.println("otel hzimetlerimiz asagidadir");
         System.out.println("******************************");
-        /*System.out.printf(" %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S\n %-10S" +
-                        "", otelHizmetleri.get(0), otelHizmetleri.get(1), otelHizmetleri.get(2), otelHizmetleri.get(3),
-                otelHizmetleri.get(4), otelHizmetleri.get(5), otelHizmetleri.get(6), otelHizmetleri.get(7),
-                otelHizmetleri.get(8), otelHizmetleri.get(9), otelHizmetleri.get(10), otelHizmetleri.get(11));
-   */
         for (int i = 0; i < otelHizmetleri.size(); i++) {
             System.out.printf("%-40s %-5s\n", otelHizmetleri.get(i), ucretHizmet.get(i));
         }
-
     }
-
     public static void otelHizmetleriLambda(List<String> service) {
         System.out.println("*****rezervasyon tamam PELVINAS otele hosgeldin*****");
         service.stream().
                 map(t -> t.toUpperCase(Locale.CHINA)).
                 forEach(HotelOperations::yazdirStr);//soutc yaz
-        // extraHotelHizmetTalep();
+
 
     }
 
     public void hotelReception() {
+        int odaNo=100;
         System.out.println("*****rezervasyon tamam PELVINAS otele hosgeldin*****");
         System.out.println("Lutfen adinizi ve soyadinizi giriniz: ");
         String adSoyad = TryCatchYusufBey.stringGirisi();//degiscek
+        scan.nextLine();
+        musteriOdaBilgisi.put(odaNo,adSoyad);
+        odaNo++;
         System.out.println("Lutfen tc'nizi giriniz: ");
         int tc = TryCatchYusufBey.intGirisi();
         System.out.println("Lutfen telefon numaranizi giriniz: ");
@@ -88,9 +84,8 @@ public class HotelOperations extends HotelServices2 {
             toplamGun = gun_farki;//+saat_farki;
 
             if (toplamGun > 0) {
-                System.out.println("Odenecek toplam gun ve saat: " + gun_farki + " gun " + saat_farki + " saat");
+                System.out.println(" toplam gun ve saat: " + gun_farki + " gun " + saat_farki + " saat");
                 System.out.println("************************************");
-                //burdan sonra rooms() calisiyor
             } else {
                 throw new Exception();
             }
@@ -98,6 +93,7 @@ public class HotelOperations extends HotelServices2 {
         } catch (Exception e) {
             System.out.println("Alıs teslimden sonra olamaz");
             hotelReception();
+
         }
     }
 
@@ -110,7 +106,7 @@ public class HotelOperations extends HotelServices2 {
         int secim = TryCatch.intGirisi();
         switch (secim) {
             case 0:
-                toplamGirisUcreti += odenecek_Ucret1;
+                //toplamGirisUcreti +=
                 System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami =" + toplamGirisUcreti);
                 odemeIslemleri();//sonra odaya ciksin
                 otelAktiviteleri();
@@ -259,14 +255,14 @@ public class HotelOperations extends HotelServices2 {
     public static void CikisIslemleriFatura() throws InterruptedException {
         System.out.println("faturaniz hazirlaniyor");
         Thread.sleep(3000);
-        System.out.println("*");
+        System.out.print("*");
         Thread.sleep(3000);
-        System.out.println("**");
+        System.out.print("**");
         Thread.sleep(3000);
-        System.out.println("***");
+        System.out.print("***");
         HotelServices ucretHizmet=new HotelServices();
         //tum alinan hizmetleri yazdir
-
+        System.out.println(musteriOdaBilgisi);
 
     }
 }
