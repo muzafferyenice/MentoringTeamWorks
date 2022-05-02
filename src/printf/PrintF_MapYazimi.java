@@ -3,7 +3,7 @@ import maps.MapOlustur;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
-public class pf {
+public class PrintF_MapYazimi {
 
 public class C02_ListeyiDuzenliYazdirma {
     public void main(String[] args) {

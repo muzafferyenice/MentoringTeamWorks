@@ -8,8 +8,8 @@ import java.util.*;
 import static pelvinasOtel.HotelOperations.*;
 
 public class HotelRoomsObjectClass extends HotelRooms {
-    static HotelRooms tekKişilikOda = new HotelRooms("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "tekYatak", 250);
-    static HotelRooms ciftKişilikOda = new HotelRooms("ciftKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "ciftYatak", 400);
+    static HotelRooms tekKişilikOda = new HotelRooms("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
+    static HotelRooms ciftKişilikOda = new HotelRooms("ciftKişilikOda", "fibernet", "plazma", "kuvetBanyoJakuzi", "dag", "ciftYatak", 400);
     static HotelRooms dörtKişilikOda = new HotelRooms("dörtKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 850);
     static HotelRooms suitOda = new HotelRooms("suitOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1000);
     static HotelRooms aileOdası = new HotelRooms("aileOdası", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1500);
@@ -18,7 +18,8 @@ public class HotelRoomsObjectClass extends HotelRooms {
     static List<HotelRooms> odaTalepListesi = new ArrayList<>(Arrays.asList(tekKişilikOda,ciftKişilikOda,dörtKişilikOda,suitOda,aileOdası,kralDairesi));
 
     static Map<Integer, List<HotelRooms>> musteriOdaBilgisi = new TreeMap<>();//otele giris yapan musteri bilgileri burda topla
-    static long odenecek_Ucret1;
+    static long girisUcreti;
+
 
     static Scanner scan = new Scanner(System.in);
     static List<String > extraHotelHizmetTalebi = new ArrayList<>(Arrays.asList("houseKeeping;\n" +
@@ -28,7 +29,7 @@ public class HotelRoomsObjectClass extends HotelRooms {
             "fitnessMerkezi;\n" +
             "kuaför;"));
 
-    public static void rooms() {
+    public static void rooms() throws InterruptedException {
 
         JOptionPane obj=new JOptionPane();
 
@@ -38,8 +39,8 @@ public class HotelRoomsObjectClass extends HotelRooms {
         switch (tercih) {
             case 1:
                 getroom("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "tekYatak", 250);
-                odenecek_Ucret1 = toplamGun * 250;
-                System.out.println("Odeyeceginiz toplam ucret: " + odenecek_Ucret1);
+                girisUcreti = toplamGun * 250;
+                System.out.println("Odeyeceginiz toplam ucret: " + girisUcreti);
                 extraHotelHizmetTalep(Collections.singletonList("houseKeeping;\n" +
                         "degerliEsyaSaklamaKasası;\n" +
                         "yüzmeHavuzları;\n" +
@@ -85,5 +86,6 @@ public class HotelRoomsObjectClass extends HotelRooms {
                                     t.getLcd().equalsIgnoreCase(lcd)&&t.getKuvetBanyoJakuzi().equalsIgnoreCase(kuvetBanyoJakuzi)&&
                             t.getManzara().equalsIgnoreCase(manzara)&&t.getYatakOlcut().equalsIgnoreCase(yatakOlcut)).
                             forEach(System.out::println);
+
     }
 }

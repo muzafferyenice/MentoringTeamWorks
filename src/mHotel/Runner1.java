@@ -114,7 +114,7 @@ public class Runner1 {
 
                 System.out.println("\nİşleminize Devam Etmek İstiyormusunuz (e/h)");
                 cevap = sc.next().charAt(0);
-                if (!(cevap == 'e' | cevap == 'E' || cevap == 'h' || cevap == 'H')) {
+                if (!(cevap == 'e' || cevap == 'E' || cevap == 'h' || cevap == 'H')) {
                     System.out.println("Hatalı Seçim");
                     System.out.println("\nDevam Etmek İstiyor musunuz: (e/h)");
                     cevap = sc.next().charAt(0);

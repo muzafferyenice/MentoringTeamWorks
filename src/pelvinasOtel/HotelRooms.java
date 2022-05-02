@@ -1,6 +1,9 @@
 package pelvinasOtel;
 
-public class HotelRooms implements M_Corleone{//otel odalari
+public class HotelRooms implements M_Corleone {//otel odalari
+    private int odaNo;
+
+
 
     private String odaTercih;
     private String internet;
@@ -9,6 +12,29 @@ public class HotelRooms implements M_Corleone{//otel odalari
     private String manzara;
     private String yatakOlcut;
     private double gunlukUcret;
+    private int sifreler;
+
+    public int getOdaNo() {
+        return odaNo;
+
+    }
+
+    public int setOdaNo(int odaNo) {
+
+        odaNo++;
+        if (odaNo == odaNo - 1) {
+            System.out.println("oda dolu");
+            //tekrar oda secimcagir
+        }else this.odaNo = odaNo;
+        return odaNo;
+    }
+    public int getSifreler() {
+        return sifreler;
+    }
+
+    public void setSifreler(int sifreler) {
+        this.sifreler = sifreler;
+    }
 
     private String kalinacakSehir;
     private String girisTarihi;
@@ -37,13 +63,13 @@ public class HotelRooms implements M_Corleone{//otel odalari
 
     @Override
     public String toString() {
-        return "HotelRooms{" +
-                "odaTercih='" + odaTercih + '\'' +
-                ", internet='" + internet + '\'' +
-                ", lcd='" + lcd + '\'' +
-                ", kuvetBanyoJakuzi='" + kuvetBanyoJakuzi + '\'' +
-                ", manzara='" + manzara + '\'' +
-                ", yatakOlcut='" + yatakOlcut + '\'' +
+        return
+                "odaTercih='" + odaTercih + '\'' +"\n"+
+                ", internet='" + internet + '\'' +"\n"+
+                ", lcd='" + lcd + '\'' +"\n"+
+                ", kuvetBanyoJakuzi='" + kuvetBanyoJakuzi + '\'' +"\n"+
+                ", manzara='" + manzara + '\'' +"\n"+
+                ", yatakOlcut='" + yatakOlcut + '\'' +"\n"+
                 ", gunlukUcret=" + gunlukUcret +
                 '}';
     }

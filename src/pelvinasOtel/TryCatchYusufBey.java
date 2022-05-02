@@ -35,8 +35,8 @@ public class TryCatchYusufBey {
         try {
             kelime = scan.nextLine();
             String kontrol = kelime.replaceAll("\\D", "");
-            String kontrol2 = kelime.replaceAll("\\w", "");
-            if (kontrol.length() != 0 || kontrol2.length() != 0) {
+            //String kontrol2 = kelime.replaceAll("\\w", "");
+            if (kontrol.length() != 0 ) {
                 throw new InputMismatchException("harf disinda karakter yok");
             }
         } catch (InputMismatchException e) {

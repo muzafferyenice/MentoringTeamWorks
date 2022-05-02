@@ -5,6 +5,7 @@ import storage_project.TryCatch;
 import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.function.Predicate;
 
 import static pelvinasOtel.HotelRoomsObjectClass.*;
 
@@ -12,12 +13,14 @@ public class HotelOperations extends HotelServices2 {
 
     static Scanner scan = new Scanner(System.in);
     static long toplamGun;//alacagin localdatetime ile hesapala
+    static HotelRooms obj = new HotelRooms();
+    static List<Integer> sifreler = new ArrayList<>(Arrays.asList(0000, 1234, 9876, 6789, 5555));
 
     static double toplamGirisUcreti;//reception seciminde toplam tutar
     static double toplamCikisUcreti;//extra klairken aldigi hizmet yani =alinan hizmet +toplamGirisUcret
 
     static List<String> ucretHizmet = new ArrayList<>(Arrays.asList("ucretsiz ", "ucretsiz", "ucretsiz ", "ucretsiz",
-            "ucretsiz ", "ucretli", "ucretli ", "ucretli", "ucretsiz ", "ucretli", "ucretli ", "ucretli"));
+            "ucretsiz ", "ucretli 100tl", "ucretli Yusuf bey ile gorusun ", "ucretli 500tl", "ucretsiz ", "ucretli 500tl", "ucretli 1000tl ", "ucretli Mirac&Mustafa beylere danisin"));
     static List<String> otelHizmetleri = new ArrayList<>(Arrays.asList("houseKeeping icin        0 ",
             "degerliEsyaSaklamaKasası icin 1 ",
             "yüzmeHavuzları icin     2 ",
@@ -40,17 +43,18 @@ public class HotelOperations extends HotelServices2 {
                 otelHizmetleri.get(4), otelHizmetleri.get(5), otelHizmetleri.get(6), otelHizmetleri.get(7),
                 otelHizmetleri.get(8), otelHizmetleri.get(9), otelHizmetleri.get(10), otelHizmetleri.get(11));
    */
-        for (int i = 0; i <otelHizmetleri.size() ; i++) {
+        for (int i = 0; i < otelHizmetleri.size(); i++) {
             System.out.printf("%-40s %-5s\n", otelHizmetleri.get(i), ucretHizmet.get(i));
         }
 
     }
+
     public static void otelHizmetleriLambda(List<String> service) {
         System.out.println("*****rezervasyon tamam PELVINAS otele hosgeldin*****");
         service.stream().
                 map(t -> t.toUpperCase(Locale.CHINA)).
                 forEach(HotelOperations::yazdirStr);//soutc yaz
-               // extraHotelHizmetTalep();
+        // extraHotelHizmetTalep();
 
     }
 
@@ -61,8 +65,7 @@ public class HotelOperations extends HotelServices2 {
         System.out.println("Lutfen tc'nizi giriniz: ");
         int tc = TryCatchYusufBey.intGirisi();
         System.out.println("Lutfen telefon numaranizi giriniz: ");
-        scan.nextLine();
-        String tlf = TryCatch.stringGiris();
+        Integer tlf = TryCatchYusufBey.intGirisi();
         //yas alip cocuklar icin indirim yap
         System.out.println("Lutfen giris yaptiginiz tarihi giriniz: (Ornek: 12-01-2022 12:00:00)");// ay ve gunu ayirmak mi yoksa string almak mi?
         String girisGunu = scan.nextLine();
@@ -98,7 +101,7 @@ public class HotelOperations extends HotelServices2 {
         }
     }
 
-    public static void extraHotelHizmetTalep(List<String> service) {//lambda show
+    public static void extraHotelHizmetTalep(List<String> service) throws InterruptedException {//lambda show
         System.out.println("***** Listeden diledigin hizmeti sec *****");
         service.stream().
                 map(t -> t.toUpperCase(Locale.CHINA)).
@@ -107,20 +110,22 @@ public class HotelOperations extends HotelServices2 {
         int secim = TryCatch.intGirisi();
         switch (secim) {
             case 0:
-                toplamGirisUcreti+=odenecek_Ucret1;
-                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami ="+toplamGirisUcreti);
+                toplamGirisUcreti += odenecek_Ucret1;
+                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami =" + toplamGirisUcreti);
                 odemeIslemleri();//sonra odaya ciksin
+                otelAktiviteleri();
+                CikisIslemleriFatura();
                 break;
             case 1:
-                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami ="+toplamGirisUcreti);
+                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami =" + toplamGirisUcreti);
                 odemeIslemleri();//sonra odaya ciksin
                 break;
             case 2:
-                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami ="+toplamGirisUcreti);
+                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami =" + toplamGirisUcreti);
                 odemeIslemleri();//sonra odaya ciksin
                 break;
             case 3:
-                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami ="+toplamGirisUcreti);
+                System.out.println("sectiginiz hizmet tanimlandi bu hizmet muesesemizin ikrami =" + toplamGirisUcreti);
                 odemeIslemleri();//sonra odaya ciksin
                 break;
             case 4:
@@ -155,10 +160,112 @@ public class HotelOperations extends HotelServices2 {
 
     }
 
+
+
+    public static void otelAktiviteleri() {
+        System.out.println("bunlardan hangi aktivitelere katilmak istersiniz");
+
+        System.out.printf("%-35s %-10s \n", "Aktiviteler " ," Fiyat Bilgisi");
+        System.out.println("==========================================================");
+        for (int i = 0; i < otelHizmetleri.size(); i++) {
+            System.out.printf("%-40s %-5s\n", otelHizmetleri.get(i), ucretHizmet.get(i));
+        }
+        int aktiviteSec=scan.nextInt();
+        switch(aktiviteSec){
+            case 0:
+                toplamCikisUcreti+=0;
+                break;
+            case 1:
+                toplamCikisUcreti+=0;
+                break;
+            case 2:
+                toplamCikisUcreti+=0;
+                break;
+            case 3:
+                toplamCikisUcreti+=0;
+                break;
+            case 4:
+                toplamCikisUcreti+=0;
+                break;
+            case 5:
+                toplamCikisUcreti+=100;
+                System.out.println(toplamCikisUcreti);
+                break;
+            case 6:
+                toplamCikisUcreti+=0;
+                break;
+            case 7:
+                toplamCikisUcreti+=0;
+                break;
+            case 8:
+                toplamCikisUcreti+=0;
+                break;
+            case 9:
+                toplamCikisUcreti+=0;
+                break;
+            case 10:
+                toplamCikisUcreti+=0;
+                break;
+            case 11:
+                toplamCikisUcreti+=0;
+                break;
+            default:
+                System.out.println("bari free leri seceydin");
+                otelAktiviteleri();
+        }
+
+
+    }
+
     public static void odemeIslemleri() {
         System.out.println("kart ile odeme 1 nakit odeme 2");
-        int secim = JOptionPane.showOptionDialog(null,"devam etmek istiymisen","Siparis",JOptionPane.YES_NO_CANCEL_OPTION,3, null, null, "secenekler");
+       // int secim = JOptionPane.showOptionDialog(null, "devam etmek istiymisen", "Siparis", JOptionPane.YES_NO_CANCEL_OPTION, 3, null, null, "secenekler");
+        int odemeTuru = scan.nextInt();
+        if (odemeTuru == 1) {
+            boolean flag = true;
+            do {
+                System.out.println("kart no son dort hane  giriniz ");
+                try {
+                    String kartNo = scan.next();
+                    if (kartNo.length() == 4) {
+                        System.out.println("sifre gir");
+                        flag=false;
+                        try {
+                            int sifre = scan.nextInt();
 
+                            if ((sifreler.stream().anyMatch(t -> t.equals(sifre)))) {//sifreyi bankadan cek static sifreler tanimla list te ordan cek lambda match ile
+                                System.out.println("sifre kabul edildi odeme tamam odaniza gidebilrsiniz");
+                               // otelAktiviteleri();
+
+                            } else throw new InputMismatchException("yanlis sifre");
+
+                        } catch (InputMismatchException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    } else throw new InputMismatchException("son dort hane gircen");
+                    flag = true;
+                } catch (InputMismatchException e) {
+                    System.out.println(e.getMessage());
+
+                }
+
+            }  while (flag);
+
+        }else if(odemeTuru==2){
+            System.out.println("nakit odeme icin tesekkurler odaniza cikabilirisni");
+           // otelAktiviteleri();
+        }else odemeIslemleri();
+    }
+    public static void CikisIslemleriFatura() throws InterruptedException {
+        System.out.println("faturaniz hazirlaniyor");
+        Thread.sleep(3000);
+        System.out.println("*");
+        Thread.sleep(3000);
+        System.out.println("**");
+        Thread.sleep(3000);
+        System.out.println("***");
+        HotelServices ucretHizmet=new HotelServices();
+        //tum alinan hizmetleri yazdir
 
 
     }

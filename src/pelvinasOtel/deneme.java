@@ -1,7 +1,12 @@
 package pelvinasOtel;
 
+import mHotel.CiftKişilikOda;
+import mHotel.TekKişilikOda;
+
+import java.util.Arrays;
 import java.util.Collections;
 
+import static mHotel.Otel.odasecimi;
 import static pelvinasOtel.HotelOperations.*;
 import static pelvinasOtel.HotelRoomsObjectClass.extraHotelHizmetTalebi;
 import static pelvinasOtel.HotelRoomsObjectClass.rooms;
@@ -15,9 +20,20 @@ import static pelvinasOtel.HotelRoomsObjectClass.rooms;
 */
 
 public class deneme implements M_Corleone{
-    public static void main(String[] args) {
-        odemeIslemleri();
+    public static void main(String[] args) throws InterruptedException {
+        //odemeIslemleri();
        // rooms();
+        //CikisIslemleriFatura();
+      //  otelAktiviteleri();
+        //odasecimi(1);
+        HotelRooms odaNo[]=new HotelRooms[100];
+        HotelRooms odaNo1=new HotelRooms();
+
+        System.out.println(odaNo1.setOdaNo(1));
+        System.out.println(odaNo1.setOdaNo(1));
+
+
+
 
     }
 

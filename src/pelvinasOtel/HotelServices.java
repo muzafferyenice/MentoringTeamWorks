@@ -3,8 +3,7 @@ package pelvinasOtel;
 
 public class HotelServices implements M_Corleone{//tum otel hizmetleri fiyatlari
 
-    private String otelIsim;
-    private String otelYildiz;
+
     private String havaalanıTransferi;
     private String araçKiralamaHizmetleri;//yusuf beyin acentesiyle
     private String kuruTemizlemeUtuhizmeti;
@@ -13,12 +12,13 @@ public class HotelServices implements M_Corleone{//tum otel hizmetleri fiyatlari
     private String spa;
     private String turGezi;
 
+    public HotelServices(){
 
-    public HotelServices(String otelIsim, String otelYildiz, String havaalanıTransferi, String araçKiralamaHizmetleri,
+    }
+    public HotelServices( String havaalanıTransferi, String araçKiralamaHizmetleri,
                          String kuruTemizlemeUtuhizmeti,
                          String ucretsizOtopark, String aquaPark, String spa, String turGezi) {
-        this.otelIsim = otelIsim;
-        this.otelYildiz = otelYildiz;
+
         this.havaalanıTransferi = havaalanıTransferi;
         this.araçKiralamaHizmetleri = araçKiralamaHizmetleri;
         this.kuruTemizlemeUtuhizmeti = kuruTemizlemeUtuhizmeti;
@@ -28,21 +28,6 @@ public class HotelServices implements M_Corleone{//tum otel hizmetleri fiyatlari
         this.turGezi = turGezi;
     }
 
-    public String getOtelIsim() {
-        return otelIsim;
-    }
-
-    public void setOtelIsim(String otelIsim) {
-        this.otelIsim = otelIsim;
-    }
-
-    public String getOtelYildiz() {
-        return otelYildiz;
-    }
-
-    public void setOtelYildiz(String otelYildiz) {
-        this.otelYildiz = otelYildiz;
-    }
 
     public String getHavaalanıTransferi() {
         return havaalanıTransferi;
@@ -103,8 +88,6 @@ public class HotelServices implements M_Corleone{//tum otel hizmetleri fiyatlari
     @Override
     public String toString() {
         return "HotelServices{" +
-                "otelIsim='" + otelIsim + '\'' +
-                ", otelYildiz='" + otelYildiz + '\'' +
                 ", havaalanıTransferi='" + havaalanıTransferi + '\'' +
                 ", araçKiralamaHizmetleri='" + araçKiralamaHizmetleri + '\'' +
                 ", kuruTemizlemeUtuhizmeti='" + kuruTemizlemeUtuhizmeti + '\'' +
