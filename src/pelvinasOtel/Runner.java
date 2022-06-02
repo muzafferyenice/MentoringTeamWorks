@@ -8,6 +8,8 @@ public class Runner extends HotelOperations {
     static HotelRoomsObjectClass veriGirisi = new HotelRoomsObjectClass();
 
 
+
+
     public static void main(String[] args) throws InterruptedException {
         menu();
     }
