@@ -2,9 +2,6 @@ package pelvinasOtel;
 
 public class HotelRooms implements M_Corleone {//otel odalari
     private int odaNo;
-
-
-
     private String odaTercih;
     private String internet;
     private String lcd;
@@ -13,6 +10,7 @@ public class HotelRooms implements M_Corleone {//otel odalari
     private String yatakOlcut;
     private double gunlukUcret;
     private int sifreler;
+
 
     public int getOdaNo() {
         return odaNo;

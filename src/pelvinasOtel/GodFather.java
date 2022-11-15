@@ -4,7 +4,6 @@ public interface GodFather {
 
     void hotelReception();
     void rooms();
-
     void extraHotelHizmetTalep();
     void otelHizmetleriLambda();//Lambda kullanimi
 

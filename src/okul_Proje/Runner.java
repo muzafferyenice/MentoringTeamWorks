@@ -20,6 +20,8 @@ public class Runner extends MethodClass{
         Runner obj = new Runner();
 
     }
+
+
     //secimler de next al nextline degil
 
 

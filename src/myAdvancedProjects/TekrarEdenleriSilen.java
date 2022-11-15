@@ -16,7 +16,10 @@ public class TekrarEdenleriSilen {
          * OUTPUT : [1,2,3,4,5,6,7,8,9]
          */
 
-        int[] arr = {1, 2, 2, 3, 1, 4, 2, 5, 6, 8, 7, 5, 9, 1};
+        int[] arr = {1, 2, 2, 3, -1, 4, 2, 5, 6, 8, 7, 5, 9, 1};
+        Arrays.sort(arr);
+        Arrays.stream(arr).distinct().forEach(System.out::print);
+        System.out.println("arr = " + Arrays.toString(arr));
         List<Integer> tekrarsiz = new ArrayList<>();
         for (Integer s :arr) {
             if (!tekrarsiz.contains(s)){

@@ -42,7 +42,7 @@ public class MethodClass extends Kisi {
                             ogrenci.add(obj);
                             System.out.println("eklenen ogrenci : "+ obj.getAdSoyad());
                         }
-                    } catch (Exception e) {
+                    } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                     }
                 } else {//3

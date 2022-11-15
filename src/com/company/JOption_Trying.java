@@ -8,7 +8,10 @@ public class JOption_Trying{
 
         String secenekler[] = {"evet", "hayir", "kararsiz"};
         String mesaj = "kahve icer misin?";
-        int secim = JOptionPane.showOptionDialog(null, mesaj, "Siparis", JOptionPane.YES_NO_CANCEL_OPTION,
+        int secim = JOptionPane.
+                showOptionDialog(null,
+                        mesaj, "Siparis",
+                        JOptionPane.YES_NO_CANCEL_OPTION,
                 3, null, secenekler, null);
 
 

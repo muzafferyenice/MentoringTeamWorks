@@ -8,7 +8,9 @@ import java.util.*;
 import static pelvinasOtel.HotelOperations.*;
 
 public class HotelRoomsObjectClass extends HotelRooms {
-    static HotelRooms tekKişilikOda = new HotelRooms("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
+    static HotelRooms tekKişilikOda =
+            new HotelRooms("tekKişilikOda", "internet", "lcd",
+                    "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
     static HotelRooms ciftKişilikOda = new HotelRooms("ciftKişilikOda", "fibernet", "plazma", "kuvetBanyoJakuzi", "dag", "ciftYatak", 400);
     static HotelRooms dörtKişilikOda = new HotelRooms("dörtKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 850);
     static HotelRooms suitOda = new HotelRooms("suitOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1000);
